@@ -8,6 +8,8 @@ class AppFontStyle {
 
   static TextStyle normalTextStyle = const TextStyle(fontSize: 15,color: Colors.black,);
 
+  static TextStyle normalTextStyleLight = const TextStyle(fontSize: 20,color: Colors.white,);
+
   static TextStyle textButtonStyle = const TextStyle(fontSize: 16,color: Colors.red,fontWeight: FontWeight.bold);
 
 }

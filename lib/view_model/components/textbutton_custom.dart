@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_api/utils/font_style.dart';
+import '../../utils/font_style.dart';
+
 
 class CustomButton extends StatelessWidget {
   CustomButton({required this.buttonName, this.onPressed, super.key});
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
     return TextButton(
       style: TextButton.styleFrom(textStyle: AppFontStyle.normalTextStyle),
       onPressed: onPressed,
-      child: Text(buttonName),
+      child: Text(buttonName,style: AppFontStyle.titleStyle,),
     );
   }
 }
