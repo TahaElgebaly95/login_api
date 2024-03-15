@@ -13,9 +13,10 @@ class CustomListTasks extends StatelessWidget {
       builder: (context, state) {
         var cubit = TaskCubit.get(context);
         return ListView.separated(
-            itemBuilder: (context, index) =>  TaskWidget(taskModel: cubit.taskList[index],),
+            itemBuilder: (context, index) =>
+                TaskWidget(oneTask: cubit.taskModel?.data?.tasks?[index]),
             separatorBuilder: (context, index) => const SizedBox(height: 10),
-            itemCount: cubit.taskList.length);
+            itemCount: cubit.taskModel?.data?.tasks?.length ?? 0);
       },
     );
   }

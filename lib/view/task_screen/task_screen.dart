@@ -13,7 +13,7 @@ class TaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     floatingActionButton: const CustomActionButton(),
+      floatingActionButton: const CustomActionButton(),
       appBar: AppBar(
         actions: [
           BlocBuilder<ThemeCubit, ThemeState>(

@@ -6,9 +6,9 @@ import 'package:login_api/view_model/cubit/task_cubit/task_state.dart';
 import '../../utils/font_style.dart';
 
 class TaskWidget extends StatelessWidget {
-  TaskWidget({required this.taskModel, super.key});
+  TaskWidget({required this.oneTask, super.key});
 
-  TaskModel taskModel;
+  Task? oneTask;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class TaskWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
           // width: 100,
-          height: 140,
+          height: 180,
           decoration: BoxDecoration(
             border: Border.all(color: Colors.yellow.shade700, width: 2),
             borderRadius: BorderRadius.circular(12),
@@ -32,20 +32,22 @@ class TaskWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(taskModel.title,
+                    Text(oneTask?.title ?? '',
                         style: AppFontStyle.normalTextStyleLight),
-                    Text(taskModel.description,
+                    Text(oneTask?.description ?? '',
                         style: AppFontStyle.normalTextStyleLight),
-                    Text(taskModel.date,
+                    Text(oneTask?.startDate ?? '',
                         style: AppFontStyle.normalTextStyleLight),
-                    Text(taskModel.time,
+                    Text(oneTask?.endDate ?? '',
+                        style: AppFontStyle.normalTextStyleLight),
+                    Text(oneTask?.status ?? '',
                         style: AppFontStyle.normalTextStyleLight),
                   ],
                 ),
               ),
               IconButton(
                 onPressed: () {
-                  cubit.deleteTask();
+                  cubit.deleteTask(oneTask?.id ?? 0);
                 },
                 icon: const Icon(Icons.done_all, size: 30),
               ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_api/view/auth_screen/login_screen.dart';
-import 'package:login_api/view/auth_screen/register_screen.dart';
 import 'package:login_api/view/task_screen/task_screen.dart';
 import 'package:login_api/view_model/components/themes/dark_theme.dart';
 import 'package:login_api/view_model/components/themes/light_theme.dart';
@@ -19,7 +18,7 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   await SharedHelper.init();
   DioHelper.init();
-  await SharedHelper.clear();
+  //await SharedHelper.clear();
   String? token = await SharedHelper.get(key: SharedKey.token);
   runApp(
     MultiBlocProvider(
@@ -36,8 +35,8 @@ void main() async {
             darkTheme: darkTheme,
             themeMode: cubit.isDark ? ThemeMode.dark : ThemeMode.light,
             debugShowCheckedModeBanner: false,
-           // home: token == null ? const LoginScreen() : const TaskScreen(),
-                home: const RegisterScreen(),
+            home: token == null ? const LoginScreen() : const TaskScreen(),
+            //  home: const RegisterScreen(),
           );
         },
       ),

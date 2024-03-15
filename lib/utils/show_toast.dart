@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-void showToast(var msg) {
+void customShowToast(var msg) {
   Fluttertoast.showToast(
       msg: msg,
       gravity: ToastGravity.BOTTOM,

@@ -37,9 +37,10 @@ class DioHelper {
     bool? withToken = false,
   }) async {
     dio?.options.headers = headers;
-    if (withToken!){
+    if (withToken!) {
       dio?.options.headers = {
-        'Authorization': 'Bearer ${await SharedHelper.get(key: SharedKey.token)}'
+        'Authorization':
+            'Bearer ${await SharedHelper.get(key: SharedKey.token)}'
       };
     }
     return await dio!.get(
@@ -53,8 +54,15 @@ class DioHelper {
       {required String endpoint,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
-      Map<String, dynamic>? headers}) async {
+      Map<String, dynamic>? headers,
+      bool? withToken = false}) async {
     dio?.options.headers = headers;
+    if (withToken!) {
+      dio?.options.headers = {
+        'Authorization':
+            'Bearer ${await SharedHelper.get(key: SharedKey.token)}'
+      };
+    }
     return await dio!.post(
       endpoint,
       queryParameters: queryParameters,
@@ -66,8 +74,15 @@ class DioHelper {
       {required String endpoint,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
-      Map<String, dynamic>? headers}) async {
+      Map<String, dynamic>? headers,
+      bool? withToken = false}) async {
     dio?.options.headers = headers;
+    if (withToken!) {
+      dio?.options.headers = {
+        'Authorization':
+            'Bearer ${await SharedHelper.get(key: SharedKey.token)}'
+      };
+    }
     return await dio!.put(
       endpoint,
       queryParameters: queryParameters,
@@ -79,8 +94,15 @@ class DioHelper {
       {required String endpoint,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
-      Map<String, dynamic>? headers}) async {
+      Map<String, dynamic>? headers,
+      bool? withToken = false}) async {
     dio?.options.headers = headers;
+    if (withToken!) {
+      dio?.options.headers = {
+        'Authorization':
+            'Bearer ${await SharedHelper.get(key: SharedKey.token)}'
+      };
+    }
     return await dio!.patch(
       endpoint,
       queryParameters: queryParameters,
@@ -92,8 +114,15 @@ class DioHelper {
       {required String endpoint,
       Map<String, dynamic>? queryParameters,
       Map<String, dynamic>? body,
-      Map<String, dynamic>? headers}) async {
+      Map<String, dynamic>? headers,
+      bool? withToken = false}) async {
     dio?.options.headers = headers;
+    if (withToken!) {
+      dio?.options.headers = {
+        'Authorization':
+            'Bearer ${await SharedHelper.get(key: SharedKey.token)}'
+      };
+    }
     return await dio!.delete(
       endpoint,
       queryParameters: queryParameters,

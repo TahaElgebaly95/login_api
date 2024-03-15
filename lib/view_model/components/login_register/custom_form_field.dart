@@ -27,7 +27,7 @@ class CustomFormFieldTask extends StatelessWidget {
           borderSide: const BorderSide(color: Colors.amber),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blue),
+          borderSide: const BorderSide(color: Colors.blue),
           borderRadius: BorderRadius.circular(12),
         ),
         errorBorder: OutlineInputBorder(

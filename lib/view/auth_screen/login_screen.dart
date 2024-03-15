@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_api/utils/show_toast.dart';
 import 'package:login_api/view/auth_screen/register_screen.dart';
 import 'package:login_api/view/task_screen/task_screen.dart';
 import 'package:login_api/view_model/components/textbutton_custom.dart';
@@ -29,6 +30,7 @@ class LoginScreen extends StatelessWidget {
             listener: (context, state) {
               if (state is SuccessLoginState) {
                 Navigation.pushAndRemove(context, const TaskScreen());
+                customShowToast('login successfully');
               }
             },
             builder: (context, state) {

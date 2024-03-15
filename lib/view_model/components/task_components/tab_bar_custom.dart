@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TabBarCustom extends StatelessWidget {
-  TabBarCustom({required this.tabs, required this.children, super.key});
+  const TabBarCustom({required this.tabs, required this.children, super.key});
 
   final List<Widget> tabs;
   final List<Widget> children;

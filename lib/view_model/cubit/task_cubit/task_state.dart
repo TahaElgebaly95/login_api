@@ -16,10 +16,8 @@ class SuccessDeleteTaskState extends TaskState {}
 
 class LoadingGetTaskState extends TaskState {}
 
-class ErrorGetTaskState extends TaskState {
- String error;
-
-  ErrorGetTaskState(this.error);
-}
+class ErrorGetTaskState extends TaskState {}
 
 class SuccessGetTaskState extends TaskState {}
+
+class TokenExpiredState extends TaskState {}
